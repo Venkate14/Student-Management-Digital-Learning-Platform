@@ -1,33 +1,12 @@
-import { useState } from "react";
+import "./Page.css";
 
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = () => {
-    alert(`Login Clicked with Email: ${email}`);
-  };
-
+export default function Login() {
   return (
-    <div style={{ textAlign: "center", marginTop: "100px" }}>
+    <div className="page">
       <h2>Student Login</h2>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        style={{ margin: "10px", padding: "10px" }}
-      /><br/>
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        style={{ margin: "10px", padding: "10px" }}
-      /><br/>
-      <button onClick={handleLogin} style={{ padding: "10px 20px" }}>Login</button>
+      <input placeholder="Email" /><br /><br />
+      <input type="password" placeholder="Password" /><br /><br />
+      <button>Login</button>
     </div>
   );
 }
-
-export default Login;

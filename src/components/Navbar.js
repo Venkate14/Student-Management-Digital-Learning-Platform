@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-function Navbar() {
+export default function Navbar() {
   return (
-    <nav style={{ padding: "10px", background: "#0077b6", color: "white" }}>
-      <h2 style={{ display: "inline", marginRight: "20px" }}>Smart Learning</h2>
-      <Link to="/" style={{ margin: "10px", color: "white" }}>Home</Link>
-      <Link to="/login" style={{ margin: "10px", color: "white" }}>Login</Link>
-      <Link to="/register" style={{ margin: "10px", color: "white" }}>Register</Link>
-      <Link to="/dashboard" style={{ margin: "10px", color: "white" }}>Dashboard</Link>
+    <nav className="navbar">
+      <h2>Smart Learning</h2>
+      <div>
+        <Link to="/">Home</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
+        <Link to="/dashboard">Dashboard</Link>
+      </div>
     </nav>
   );
 }
-
-export default Navbar;

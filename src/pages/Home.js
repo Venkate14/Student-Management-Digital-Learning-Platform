@@ -1,18 +1,14 @@
-import { Link } from "react-router-dom";
+import "./Page.css";
 
-function Home() {
+export default function Home() {
   return (
-    <div style={{ textAlign: "center", marginTop: "100px" }}>
-      <h1>Welcome to Smart Learning Platform</h1>
-      <p>Learn. Pay. Grow.</p>
-      <Link to="/login">
-        <button style={{ margin: "10px", padding: "10px 20px" }}>Login</button>
-      </Link>
-      <Link to="/register">
-        <button style={{ margin: "10px", padding: "10px 20px" }}>Register</button>
-      </Link>
+    <div className="page">
+      <h1>Student Digital Learning Platform</h1>
+      <p>Full Stack Project with Payment & AI Chatbot</p>
+      <div>
+        <a href="/login"><button>Login</button></a>
+        <a href="/register"><button style={{ marginLeft: 10 }}>Register</button></a>
+      </div>
     </div>
   );
 }
-
-export default Home;
