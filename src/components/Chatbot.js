@@ -1,43 +1,52 @@
 import { useState } from "react";
+import "./Chatbot.css";
 
-function Chatbot() {
+export default function Chatbot() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState([{ from: "bot", text: "Hi! How can I help you?" }]);
+  const [messages, setMessages] = useState([
+    { from: "bot", text: "Hi 👋 How can I help you?" }
+  ]);
   const [input, setInput] = useState("");
 
-  const handleSend = () => {
+  const sendMessage = () => {
     if (!input) return;
-    setMessages([...messages, { from: "user", text: input }, { from: "bot", text: "This is a dummy reply." }]);
+
+    setMessages([
+      ...messages,
+      { from: "user", text: input },
+      { from: "bot", text: "This feature will connect to AI backend." }
+    ]);
     setInput("");
   };
 
   return (
-    <div style={{ position: "fixed", bottom: "20px", right: "20px" }}>
+    <>
+      <div className="chatbot-btn" onClick={() => setOpen(!open)}>
+        💬
+      </div>
+
       {open && (
-        <div style={{ width: "300px", height: "400px", border: "1px solid gray", borderRadius: "10px", background: "white", display: "flex", flexDirection: "column" }}>
-          <div style={{ flex: 1, padding: "10px", overflowY: "auto" }}>
-            {messages.map((msg, idx) => (
-              <div key={idx} style={{ textAlign: msg.from === "bot" ? "left" : "right" }}>
-                <p>{msg.text}</p>
+        <div className="chatbot-box">
+          <h4>AI Assistant</h4>
+
+          <div className="chat-area">
+            {messages.map((msg, i) => (
+              <div key={i} className={msg.from}>
+                {msg.text}
               </div>
             ))}
           </div>
-          <div style={{ display: "flex" }}>
+
+          <div className="input-area">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type here..."
-              style={{ flex: 1, padding: "5px" }}
+              placeholder="Ask something..."
             />
-            <button onClick={handleSend}>Send</button>
+            <button onClick={sendMessage}>Send</button>
           </div>
         </div>
       )}
-      <button onClick={() => setOpen(!open)} style={{ padding: "10px", borderRadius: "50%", background: "#0077b6", color: "white" }}>
-        Chat
-      </button>
-    </div>
+    </>
   );
 }
-
-export default Chatbot;

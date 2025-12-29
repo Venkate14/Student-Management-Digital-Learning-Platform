@@ -1,0 +1,16 @@
+.dashboard {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.course-grid {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}

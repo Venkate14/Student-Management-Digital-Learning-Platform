@@ -1,0 +1,18 @@
+.pdf-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 240px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.pdf-card h4 {
+  margin-bottom: 15px;
+}
+
+.locked {
+  background: #ccc;
+  cursor: not-allowed;
+}
+

@@ -1,16 +1,12 @@
-import { Link } from "react-router-dom";
+import "./CourseCard.css";
 
-function CourseCard({ course }) {
+export default function CourseCard({ title, price, tag, onBuy }) {
   return (
-    <div style={{ border: "1px solid gray", padding: "20px", width: "250px", borderRadius: "10px" }}>
-      <h3>{course.title}</h3>
-      <p>{course.description}</p>
-      <p>Price: ₹{course.price}</p>
-      <Link to="/payment">
-        <button style={{ padding: "5px 10px" }}>Buy Now</button>
-      </Link>
+    <div className="premium-card">
+      <span className="badge">{tag}</span>
+      <h3>{title}</h3>
+      <p className="price">₹{price}</p>
+      <button onClick={onBuy}>Buy Premium</button>
     </div>
   );
 }
-
-export default CourseCard;

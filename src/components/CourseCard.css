@@ -1,0 +1,32 @@
+.premium-card {
+  width: 260px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-10px);
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(135deg, #ffd43b, #ffa94d);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #5f3dc4;
+}
